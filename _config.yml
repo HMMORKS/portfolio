@@ -1,0 +1,43 @@
+# GitHub Pages Configuration
+title: "Muhammad Owais Rafiq - Portfolio"
+description: "Professional portfolio of Muhammad Owais Rafiq, Electrical Engineering student at NUST"
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# Include files
+include:
+  - _pages
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+author:
+  name: "Muhammad Owais Rafiq"
+  bio: "Electrical Engineering Student at NUST with expertise in embedded systems, telecommunications, and technical operations"
+
+# Social links
+social:
+  name: Muhammad Owais Rafiq
+  links:
+    - https://linkedin.com/in/owaisrafeeq
+    - https://github.com/HMMORKS

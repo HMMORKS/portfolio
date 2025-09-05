@@ -1,0 +1,54 @@
+make professional html code for my portfolio website in which there must be following portions About me with my picture option Skills Projects with pictures option Internship experiences certifications it must be professional and catchy with black and light blue and green and red color grade
+
+About Me: I am Muhammad Owais Rafiq, an ambitious and dedicated Electrical Engineering student at National University of Sciences and Technology (NUST), with a strong passion for technology, embedded systems, and practical problem-solving. Currently pursuing my degree, I have consistently combined academic excellence with hands-on learning to build a solid foundation in both theoretical and applied engineering.
+
+I have completed multiple internships in top-tier organizations including Jazz, where I worked as a Technical Operations Intern in the Technology Division, gaining valuable experience in RAN systems, microwave technologies, power systems (rectifiers, ATS, relays, generators), and field operations. Additionally, I interned as an Electrical Maintenance Intern at Faisal Movers, where I contributed to troubleshooting, maintaining, and inspecting electrical systems in large-scale transport operations. My portfolio includes several technical projects such as a Microcontroller-Based Electronic Voting Machine, 3-Channel DC Power Supply, Discrete Components based Audio Amplifier,Microstrip Tee Power Divider Using Quarter-Wave Transformer, 
+Design and Implementation of Single-Phase Transformer with Multiple Taps, Multi-Range Digital Ammeter Design, 
+Multilayer Coaxial Capacitor Analysis, FM Transmitter and a Hotel Reservation System using C++. I am currently expanding my skills in PCB design using KiCad, technical operations, electrial maintenance and have a keen interest in embedded systems and automation. To support my technical profile, I have also earned certifications in Project Management, Mastering C++, English for STEM, English for Business Development and English for Journalism through open MOOC platforms, enhancing my communication and documentation skills—crucial for working in multidisciplinary teams. I take pride in my strong work ethic, willingness to learn, and a problem-solving mindset. I am actively seeking opportunities that allow me to grow as a technology professional, contribute to meaningful projects, and help shape smarter and more sustainable solutions for the future.
+
+Experience: Technical Operations Intern – Jazz (Pakistan's Leading Telecom Operator) Worked in the Technology Division with a focus on RAN systems, power systems, and field operations. Gained practical experience in understanding the function of various telecom cards (ZTE, Ericsson), microwave systems, and external alarms. Contributed to site audits, power system rectification (ATS, relays, generators), and learning configurations of rectifiers with their wattage and features. Collaborated with engineers to ensure network stability, optimize equipment performance, and maintain service quality across multiple cell sites. Electrical Maintenance Intern – Faisal Movers Assisted the engineering department in maintaining and troubleshooting electrical systems across transport units and infrastructure. Gained hands-on experience in routine inspections, diagnosing electrical faults, repairing circuits, and ensuring the operational safety of systems in buses and service stations. Worked closely with senior technicians to understand large-scale vehicle electrification and contributed to improving energy efficiency and maintenance workflows.
+
+Projects : Academic & Technical Projects Design & Implementation of FM Transmitter Design & Implementation of Audio Amplifier Design & Implementation of DC Motor Position Controller Microstrip Tee Power Divider Using Quarter-Wave Transformer Design & Implementation of Single-Phase Transformer with Multiple Taps Multi-range Digital Ammeter Design Design & Implementation of a 3-Channel DC Power Supply Design & Implementation of Microcontroller-Based Electronic Voting Machine Multilayer Coaxial Capacitor Analysis Design & Fabrication of Active Low Pass Filter Design & Implementation of Arithmetic Logic Unit (ALU) Software Projects Hotel Reservation System using C++ Design of Bubble Sorting Algorithm using C++ Certificates: Courses & Certifications Mastering C++ Programming Project Management Introduction to Artificial Intelligence English for STEM English for Business Development English for Journalism Skills: Technical Skills Microsoft Office Embedded Systems Electronic Circuit Design Power Transmission Telecommunication Radio Access Network (RAN) Optical Access Network (OAN) Integrated Circuits PCB Designing Technical Operations Project Management Sports Management Graphic Designing Event Organization Software & Tools PROTEUS MATLAB LTSpice KiCAD EasyEDA Arduino IDE Programming Languages C C++ Python Assembly Language Soft Skills Communication Presentation Leadership Teamwork Collaboration
+
+PUT ALL THIS DATA
+thats great dont change it just edit some things instead of MOR. write Owais's Portfolio
+
+add technical skills as
+
+Microsoft Office
+
+Embedded Systems
+
+Power Transmission
+
+Electrical Maintenance
+
+Telecommunication
+
+Microwave Systems
+
+Rectifiers, ATS & Relays
+
+Technical Operations
+
+PCB Designing
+
+HVAC Maintenance
+
+Automotive Systems
+
+Battery Systems Diagnostics
+
+Preventive Maintenance
+
+Fleet Operations
+
+Technical Documentation
+
+ECU & Sensors
+
+Project Management
+
+add tools as
+
+OrCAD and remove the images options from all places instead of the about section and make avout section more professional
