@@ -3,268 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Muhammad Owais Rafiq, Electrical Engineering Student at NUST.">
-    <meta name="author" content="Muhammad Owais Rafiq">
-    <title>Muhammad Owais Rafiq | Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* --- CSS Variables & Color Scheme --- */
-        :root {
-            --bg-color: #000000;
-            --card-bg: #111111;
-            --accent-blue: #00d4ff;
-            --accent-green: #00ff88;
-            --accent-red: #ff3366;
-            --text-main: #ffffff;
-            --text-muted: #b3b3b3;
-            --gradient-1: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-            --gradient-2: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
-            --transition: all 0.3s ease;
-        }
-
-        /* --- Global Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            color: var(--text-main);
-        }
-
-        a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent-green);
-        }
-
-        /* --- Navigation --- */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 2px solid transparent;
-            border-image: var(--gradient-1);
-            border-image-slice: 1;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 1rem;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tab-btn {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .tab-btn:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .tab-btn.active {
-            background: var(--gradient-1);
-            color: #000;
-            border-color: transparent;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
-        }
-
-        /* --- Main Content Area --- */
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            min-height: 70vh;
-        }
-
-        .section-content {
-            display: none;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        .section-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* --- About Section & Profile Upload --- */
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .profile-wrapper {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            margin: 0 auto;
-            cursor: pointer;
-            border: 4px solid var(--accent-blue);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .profile-wrapper:hover {
-            border-color: var(--accent-green);
-            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .profile-wrapper:hover .profile-img {
-            filter: brightness(0.7);
-        }
-
-        .upload-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            opacity: 0;
-            transition: var(--transition);
-            text-align: center;
-            pointer-events: none;
-        }
-
-        .profile-wrapper:hover .upload-overlay {
-            opacity: 1;
-        }
-
-        #file-upload {
-            display: none;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-text h3 {
-            color: var(--accent-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        /* --- Grid Layouts for Cards --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card h3 {
-            color: var(--accent-green);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
-        }
-
-        /* --- Skills Section specific --- */
-        .skills-category {
-            margin-bottom: 2rem;
-        }
-        
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: rgba(0, 212, 2
+    <title>Owais's Portfolio - Muhammad Owais Rafiq</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="profile.jpg" alt="Muhammad Owais Rafiq" class="profile-image" id="profileImage">
+                    <div class="image-placeholder" id="imagePlaceholder">
+                        <i class="fas fa-user"></i>
+                        <p>Click to add your photo</p>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+                <div class="profile-info">
+                    <h1>Muhammad Owais Rafiq</h1>
+                    <h2>Electrical Engineering Student</h2>
+                    <p>National University of Sciences and Technology (NUST)</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hmmorks2000@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/owaisrafeeq</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/HMMORKS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="about">
+                <i class="fas fa-user"></i>
+                About Me
+            </button>
+            <button class="tab-btn" data-tab="skills">
+                <i class="fas fa-cog"></i>
+                Skills
+            </button>
+            <button class="tab-btn" data-tab="projects">
+                <i class="fas fa-project-diagram"></i>
+                Projects
+            </button>
+            <button class="tab-btn" data-tab="experience">
+                <i class="fas fa-briefcase"></i>
+                Experience
+            </button>
+            <button class="tab-btn" data-tab="certifications">
+                <i class="fas fa-certificate"></i>
+                Certifications
+            </button>
+        </nav>
+        <main class="content">
+            <div id="about" class="tab-content active">
+                <div class="section-header">
+                    <h2><i class="fas fa-user"></i> About Me</h2>
+                </div>
+                <div class="about-content">
+                    <p>I am Muhammad Owais Rafiq, an ambitious and dedicated Electrical Engineering student at National University of Sciences and Technology (NUST), with a strong passion for technology, embedded systems, and practical problem-solving. Currently pursuing my degree, I have consistently combined academic excellence with hands-on learning to build a solid foundation in both theoretical and applied engineering.</p>
+                    
+                    <p>I have completed multiple internships in top-tier organizations including Jazz, where I worked as a Technical Operations Intern in the Technology Division, gaining valuable experience in RAN systems, microwave technologies, power systems (rectifiers, ATS, relays, generators), and field operations. Additionally, I interned as an Electrical Maintenance Intern at Faisal Movers, where I contributed to troubleshooting, maintaining, and inspecting electrical systems in large-scale transport operations.</p>
+                    
+                    <p>My portfolio includes several technical projects such as a Microcontroller-Based Electronic Voting Machine, 3-Channel DC Power Supply, Discrete Components based Audio Amplifier, Microstrip Tee Power Divider Using Quarter-Wave Transformer, Design and Implementation of Single-Phase Transformer with Multiple Taps, Multi-Range Digital Ammeter Design, Multilayer Coaxial Capacitor Analysis, FM Transmitter and a Hotel Reservation System using C++.</p>
+                    
+                    <p>I am currently expanding my skills in PCB design using KiCad, technical operations, electrical maintenance and have a keen interest in embedded systems and automation. To support my technical profile, I have also earned certifications in Project Management, Mastering C++, English for STEM, English for Business Development and English for Journalism through open MOOC platforms, enhancing my communication and documentation skills—crucial for working in multidisciplinary teams.</p>
+                    
+                    <p>I take pride in my strong work ethic, willingness to learn, and a problem-solving mindset. I am actively seeking opportunities that allow me to grow as a technology professional, contribute to meaningful projects, and help shape smarter and more sustainable solutions for the future.</p>
+                </div>
+            </div>
+            <div id="skills" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Technical Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Expertise</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Microsoft Office</span>
+                            <span class="skill-item">Embedded Systems</span>
+                            <span class="skill-item">Power Transmission</span>
+                            <span class="skill-item">Electrical Maintenance</span>
+                            <span class="skill-item">Telecommunication</span>
+                            <span class="skill-item">Microwave Systems</span>
+                            <span class="skill-item">Rectifiers, ATS & Relays</span>
+                            <span class="skill-item">Technical Operations</span>
+                            <span class="skill-item">PCB Designing</span>
+                            <span class="skill-item">HVAC Maintenance</span>
+                            <span class="skill-item">Automotive Systems</span>
+                            <span class="skill-item">Battery Systems Diagnostics</span>
+                            <span class="skill-item">Preventive Maintenance</span>
+                            <span class="skill-item">Fleet Operations</span>
+                            <span class="skill-item">Technical Documentation</span>
+                            <span class="skill-item">ECU & Sensors</span>
+                            <span class="skill-item">Project Management</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Software & Tools</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">PROTEUS</span>
+                            <span class="skill-item">MATLAB</span>
+                            <span class="skill-item">LTSpice</span>
+                            <span class="skill-item">KiCAD</span>
+                            <span class="skill-item">EasyEDA</span>
+                            <span class="skill-item">Arduino IDE</span>
+                            <span class="skill-item">OrCAD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">C</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Assembly Language</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Communication</span>
+                            <span class="skill-item">Presentation</span>
+                            <span class="skill-item">Leadership</span>
+                            <span class="skill-item">Teamwork</span>
+                            <span class="skill-item">Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="projects" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-category">
+                        <h3>Academic & Technical Projects</h3>
+                        <div class="project-list">
+                            <div class="project-item">
+                                <h4>Design & Implementation of FM Transmitter</h4>
+                                <p>Designed and implemented a functional FM transmitter circuit using analog components.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of Audio Amplifier</h4>
+                                <p>Created a discrete components based audio amplifier with optimal performance characteristics.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of DC Motor Position Controller</h4>
+                                <p>Developed a precision control system for DC motor positioning applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Microstrip Tee Power Divider Using Quarter-Wave Transformer</h4>
+                                <p>Designed and analyzed microwave power division circuits for RF applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of Single-Phase Transformer with Multiple Taps</h4>
+                                <p>Created a multi-tap transformer design for variable voltage applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Multi-range Digital Ammeter Design</h4>
+                                <p>Developed a precision digital current measurement instrument with multiple ranges.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of a 3-Channel DC Power Supply</h4>
+                                <p>Built a regulated multi-channel power supply for laboratory applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of Microcontroller-Based Electronic Voting Machine</h4>
+                                <p>Created a secure electronic voting system using microcontroller technology.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Multilayer Coaxial Capacitor Analysis</h4>
+                                <p>Analyzed and optimized multilayer capacitor designs for high-frequency applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Fabrication of Active Low Pass Filter</h4>
+                                <p>Implemented active filtering solutions for signal processing applications.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design & Implementation of Arithmetic Logic Unit (ALU)</h4>
+                                <p>Designed and implemented a digital ALU for computational operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-category">
+                        <h3>Software Projects</h3>
+                        <div class="project-list">
+                            <div class="project-item">
+                                <h4>Hotel Reservation System using C++</h4>
+                                <p>Developed a comprehensive hotel management system with booking functionality.</p>
+                            </div>
+                            <div class="project-item">
+                                <h4>Design of Bubble Sorting Algorithm using C++</h4>
+                                <p>Implemented and optimized sorting algorithms for data processing applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="experience" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-briefcase"></i> Internship Experiences</h2>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Technical Operations Intern</h3>
+                            <div class="company-info">
+                                <span class="company">Jazz (Pakistan's Leading Telecom Operator)</span>
+                                <span class="department">Technology Division</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Worked with focus on RAN systems, power systems, and field operations</li>
+                                <li>Gained practical experience in understanding the function of various telecom cards (ZTE, Ericsson)</li>
+                                <li>Worked with microwave systems and external alarms</li>
+                                <li>Contributed to site audits and power system rectification (ATS, relays, generators)</li>
+                                <li>Learned configurations of rectifiers with their wattage and features</li>
+                                <li>Collaborated with engineers to ensure network stability and optimize equipment performance</li>
+                                <li>Maintained service quality across multiple cell sites</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Electrical Maintenance Intern</h3>
+                            <div class="company-info">
+                                <span class="company">Faisal Movers</span>
+                                <span class="department">Engineering Department</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul>
+                                <li>Assisted in maintaining and troubleshooting electrical systems across transport units and infrastructure</li>
+                                <li>Gained hands-on experience in routine inspections and diagnosing electrical faults</li>
+                                <li>Performed circuit repairs and ensured operational safety of systems in buses and service stations</li>
+                                <li>Worked closely with senior technicians to understand large-scale vehicle electrification</li>
+                                <li>Contributed to improving energy efficiency and maintenance workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="certifications" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-certificate"></i> Courses & Certifications</h2>
+                </div>
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Mastering C++ Programming</h4>
+                        <p>Advanced programming concepts and best practices</p>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Project Management</h4>
+                        <p>Professional project management methodologies and tools</p>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-robot"></i>
+                        <h4>Introduction to Artificial Intelligence</h4>
+                        <p>Fundamentals of AI and machine learning concepts</p>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-flask"></i>
+                        <h4>English for STEM</h4>
+                        <p>Technical communication skills for science and engineering</p>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>English for Business Development</h4>
+                        <p>Professional business communication and development skills</p>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-newspaper"></i>
+                        <h4>English for Journalism</h4>
+                        <p>Advanced writing and documentation skills for professional communication</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Muhammad Owais Rafiq. All rights reserved.</p>
+            <p>Built for GitHub Pages</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
